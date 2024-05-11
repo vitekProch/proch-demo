@@ -1,0 +1,13 @@
+{
+  "public/build/app.css": "public/build/app.css",
+  "public/build/app.js": "public/build/app.js",
+  "public/build/runtime.js": "public/build/runtime.js",
+  "public/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_jquery_dist_jquery_js-8519be.js": "public/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_jquery_dist_jquery_js-8519be.js",
+  "public/build/images/uvodni_foto_mensi.jpg": "public/build/images/uvodni_foto_mensi.3b6982f7.jpg",
+  "public/build/images/uvodni_foto_vetsi.jpeg": "public/build/images/uvodni_foto_vetsi.efc238cf.jpeg",
+  "public/build/images/lg.svg?io9a6k": "public/build/images/lg.09cd8e9b.svg",
+  "public/build/fonts/lg.woff?io9a6k": "public/build/fonts/lg.356a0e9c.woff",
+  "public/build/fonts/lg.ttf?io9a6k": "public/build/fonts/lg.747d0385.ttf",
+  "public/build/images/loading.gif": "public/build/images/loading.fcba57cd.gif",
+  "public/build/fonts/lg.woff2?io9a6k": "public/build/fonts/lg.64b800aa.woff2"
+}
