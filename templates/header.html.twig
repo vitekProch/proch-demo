@@ -23,20 +23,20 @@
 {% endif %}
 
 
-<header >
-  <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top" >
+<header>
+  <nav {% if active_route == 'homepage' %}data-controller="scrollHeader"{% endif %} data-scrollHeader-target="" class="navbar navbar-expand-md fixed-top bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand mx-4" href="{{ path('homepage') }}" id="brand">
         <img src="{{ asset('images/brand.png') }}" alt="Logo" class="d-inline-block align-text-top">
         <span>FOTOGRAFIE OD HANKY</span>
       </a>
-      <button type="button" class="hamburger navbar-toggler collapsed" data-action="navbar#navbarHamburgerClicked" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button data-target="scrollHeader.hamburger" type="button" class="hamburger navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarNav" data-action="scrollHeader#toggleBackground" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarNav" data-target="scrollHeader.navbar">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link {% if active_route == 'homepage' %}active{% endif %}" aria-current="page" href="{{ path('homepage') }}">Domů</a>
