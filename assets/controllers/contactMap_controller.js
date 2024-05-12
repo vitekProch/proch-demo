@@ -10,7 +10,7 @@ export default class extends Controller {
        const cairo = { lat: 49.74361351611922, lng: 13.595000399387061 };
 
        const loader = new Loader({
-           apiKey: "AIzaSyAdG1ouT1R4NSuxvVfJzC2nlladL22hDcE",
+           apiKey: "EXAMPLE",
            version: "weekly",
        });
 
