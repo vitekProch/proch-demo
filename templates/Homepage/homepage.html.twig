@@ -17,16 +17,16 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-              <h2 class="text-center">O mně</h2>
+              <h2 class="text-center home-page-titles">O mně</h2>
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-md-5">
           <div class="opening-text-image">
             <img src="{{ asset('/images/homepageImages/uvodni_foto_hanka.jpg') }}" alt="" />
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-7">
           <div class="opening-text">
             <div class="opening-text-container">
               <p><strong class="fotograf-name">BcA. Hana Jedličková</strong></p>
@@ -64,9 +64,9 @@
         <div class="social-site">
             <div class="social-site-img"
                  style="
-                 background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_1.jpg);
-                 background-size: cover;
-                 background-position: center;
+                         background-image: url('{{ asset("./images/socialSiteImages/social-site4.jpg") }}');
+                         background-size: cover;
+                         background-position: center;
                 ">
                 <div class="overlay">
                     <div class="social-site-links">
@@ -77,23 +77,23 @@
             </div>
             <div class="social-site-img"
                  style="
-                     background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_2.jpg);
-                     background-size: cover;
-                     background-position: center;
+                         background-image: url('{{ asset("./images/socialSiteImages/social-site3.jpg") }}');
+                         background-size: cover;
+                         background-position: center;
                     ">
             </div>
             <div class="social-site-img"
                  style="
-                         background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_3.jpg);
+                         background-image: url('{{ asset("./images/socialSiteImages/social-site2.jpg") }}');
                          background-size: cover;
                          background-position: center;
                         ">
             </div>
             <div class="social-site-img"
                  style="
-                         background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_4.jpg);
+                         background-image: url('{{ asset("./images/socialSiteImages/social-site1.jpg") }}');
                          background-size: cover;
-                         background-position: center;
+                         background-position: top;
                         ">
             </div>
         </div>

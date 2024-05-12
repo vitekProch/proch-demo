@@ -22,11 +22,7 @@
             background-image: url("../../public/images/homepageImages/uvodni_foto_vetsi.jpeg");
         }
     }
-    @media only screen and (max-width: 1006px) {
-        .img-fluide.hero-img-1, .img-fluide.hero-img-2 {
-            height: 50vw !important;
-        } 
-    }
+
 }
 
 // ---------- OPENING TEXT SECTION --------- //
@@ -36,6 +32,18 @@
 .opening-text-image img{
     object-fit: cover;
     width: 100%;
+}
+
+.opening-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.opening-text-container{
+    width: 600px;
+    font-size: 1.5rem;
 }
 
 // ---------- SOCIAL SITES SECTION --------- //
@@ -86,10 +94,11 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     text-align: center;
     position: absolute;
+    gap: 3rem;
 }
 .social-site-links a{
     text-decoration: none;
@@ -104,5 +113,45 @@
     &:hover{
         background-color: white;
         color: black;
+    }
+}
+.social-site-img:last-child{
+    background-position: center bottom;
+}
+
+@media only screen and (max-width: 1400px) {
+    .opening-text-container{
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 1006px) {
+    .img-fluide.hero-img-1, .img-fluide.hero-img-2 {
+        height: 50vw !important;
+    }
+    .opening-text-container{
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .opening-text-container{
+        width: 100%;
+        margin-top: .9rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .social-site-img:nth-child(2){
+        display: none;
+    }
+    .social-site-img:last-child{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-site-links a{
+        font-size: 28px;
+        width: 65%;
     }
 }
