@@ -29,7 +29,7 @@ export default class extends Controller {
         const portfolioSlider = new Swiper('.categories-slider', {
             // Optional parameters
             direction: 'horizontal',
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 10,
             // If we need pagination
             pagination: {
@@ -42,6 +42,24 @@ export default class extends Controller {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            breakpoints: {
+                400: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                },
+            }
         
         });
     }
