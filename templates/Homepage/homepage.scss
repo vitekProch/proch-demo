@@ -66,16 +66,12 @@
 }
 
 // ---------- SOCIAL SITES SECTION --------- //
-.social-sites-title{
+.social-sites-sectio{
     background-color: $second_color;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 148px;
 }
 
-.home-page-titles{
+.home-page-title{
+    padding: 1rem 0;
     font-size: 70px;
     text-align: center;
     font-family: 'League Gothic', sans-serif;
