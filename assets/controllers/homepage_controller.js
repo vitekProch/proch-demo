@@ -8,8 +8,9 @@ export default class extends Controller {
     
     reviewSlider(){
         const reviewSlider = new Swiper('.review-slider', {
-            // Optional parameters
+            lazy: true,
             direction: 'horizontal',
+            slidesPerView: 1,
             loop: true,
             // If we need pagination
             pagination: {
@@ -27,7 +28,7 @@ export default class extends Controller {
     
     portfolioSlider(){
         const portfolioSlider = new Swiper('.categories-slider', {
-            // Optional parameters
+            lazy: true,
             direction: 'horizontal',
             slidesPerView: 1,
             spaceBetween: 10,
