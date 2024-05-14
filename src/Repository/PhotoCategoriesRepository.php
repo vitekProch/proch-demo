@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\PhotoCategories;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -21,28 +22,4 @@ class PhotoCategoriesRepository extends ServiceEntityRepository
         parent::__construct($registry, PhotoCategories::class);
     }
 
-    /**
-     * @return PhotoCategories[] Returns an array of PhotoCategories objects
-     */
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.categoryName = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-
-//    public function findOneBySomeField($value): ?PhotoCategories
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

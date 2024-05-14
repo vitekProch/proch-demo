@@ -25,7 +25,7 @@ class PhotoCategories
     #[ORM\Column]
     private \DateTimeImmutable $createdAt;
 
-    #[ORM\OneToMany(mappedBy: 'photoCategory', targetEntity: PortfolioPhotos::class)]
+    #[ORM\OneToMany(targetEntity: PortfolioPhotos::class, mappedBy: 'photoCategory')]
     private Collection $portfolioPhotos;
 
     #[ORM\Column(length: 255)]

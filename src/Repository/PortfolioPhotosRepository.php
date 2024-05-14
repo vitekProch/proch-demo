@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\PortfolioPhotos;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -16,18 +17,18 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PortfolioPhotosRepository extends ServiceEntityRepository
 {
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, PortfolioPhotos::class);
     }
 
-
-    public function findByExampleField($category = null)
+    public function createQueryBuilderForPhotosBySlug(string $slug): QueryBuilder
     {
-        $dql = 'SELECT _id FROM App\Entity\PortfolioPhotos as p';
-
-        $query = $this->getEntityManager()->createQuery($dql);
-
-        return $query->getResult();
+        return $this->createQueryBuilder('p')
+            ->join('p.photoCategory', 'pc')
+            ->where('pc.slug = :slug')
+            ->setParameter('slug', $slug);
     }
+
 }

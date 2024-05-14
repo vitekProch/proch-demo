@@ -40,7 +40,7 @@
                         {% for portfolio in portfolioPhoto %}
                         <a href="{{ asset(portfolio.getPortfolioPhotoPath ) }}">
                             <li class="card">
-                                <img src="{{ asset(portfolio.getPortfolioPhotoPath ) }}" alt="{{ portfolio.getPortfolioAlt }}" alt="img">
+                                <img src="{{ asset(portfolio.getPortfolioPhotoPath ) }}" alt="{{ portfolio.getPortfolioAlt }}">
                             </li>
                         </a>
                         {% endfor %}
@@ -49,6 +49,7 @@
                  {% endif %}
             </div>
         </div>
+        {{ pagerfanta(portfolioPhoto) }}
     </div>
 </section>
 {% endblock %}

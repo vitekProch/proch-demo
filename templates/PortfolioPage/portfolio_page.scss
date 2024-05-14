@@ -85,8 +85,15 @@
 }
 
 
-
-
+.pagination{
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+.pagination__item{
+  background-color: wheat;
+  padding: 10px 17.56px;
+}
 
 
 .gallery {
