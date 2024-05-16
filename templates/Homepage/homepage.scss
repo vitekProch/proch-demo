@@ -43,13 +43,17 @@
 }
 
 .opening-text-container{
+    display: flex;
+    flex-direction: column;
     width: 600px;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    gap: 1rem;
 }
-
+.home-page-about-me-link {
+    text-align: end;
+}
 .read-more-link{
     color: black;
-    font-weight: 600;
     display: inline-block;
 }
 

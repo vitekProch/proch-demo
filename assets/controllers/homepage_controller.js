@@ -16,7 +16,10 @@ export default class extends Controller {
             pagination: {
               el: '.swiper-pagination',
             },
-          
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
             // Navigation arrows
             navigation: {
               nextEl: '.swiper-button-next',

@@ -5,8 +5,8 @@
 <section class="contact-page" data-controller="contactMap">
     <div class="container-fluid">
         <div class="row flex-wrap-reverse">
-            <div class="col-lg-5 p-0">
-                <div id="map"></div>
+            <div class="col-lg-5 p-0 contact-img ">
+                <img src="{{ asset('/images/contactImages/contact-img.jpg') }}" alt="contact">
             </div>
             <div class="col-lg-7 text-center contact-column-background">
                 {% for message in app.flashes('success') %}
