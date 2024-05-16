@@ -106,12 +106,9 @@ header {
         }
     }
 
-    @media only screen and (max-width: 1130px){
-        #brand span{
-            display: none;
-        }
-        #brand img{
-            display: block !important;
+    @media only screen and (max-width: 480px){
+        #brand {
+            font-size: 20px;
         }
     }
 }
