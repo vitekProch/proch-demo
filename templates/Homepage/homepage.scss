@@ -77,6 +77,13 @@
     max-width: 750px;
 }
 
+.swiper-button-next, .swiper-button-prev{
+    color: black;
+    &:hover{
+        color: $first_color;
+    }
+}
+
 // ---------- SOCIAL SITES SECTION --------- //
 .social-sites-sectio{
     background-color: $second_color;
