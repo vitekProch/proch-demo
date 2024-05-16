@@ -18,7 +18,7 @@ class PhotoPackageNames
     #[ORM\Column(length: 255)]
     private ?string $PhotoPackageTitle = null;
 
-    #[ORM\OneToMany(mappedBy: 'PhotoPackageName', targetEntity: PhotoPackageDetails::class, cascade: ["persist"])]
+    #[ORM\OneToMany(targetEntity: PhotoPackageDetails::class, mappedBy: 'PhotoPackageName', cascade: ["persist", "remove"])]
     private Collection $photoPackageDetails;
 
     public function __construct()
