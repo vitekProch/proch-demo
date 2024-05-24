@@ -3,12 +3,12 @@
 {% block body %}
 
 <section class="contact-page" data-controller="contactMap">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row flex-wrap-reverse">
-            <div class="col-lg-5 p-0 contact-img ">
-                <img src="{{ asset('/images/contactImages/contact-img.jpg') }}" alt="contact">
+            <div class="col-lg-6 p-0 contact-img ">
+                <img class="img-fluid" src="{{ asset('/images/contactImages/contact-img.jpg') }}" alt="contact">
             </div>
-            <div class="col-lg-7 text-center contact-column-background">
+            <div class="col-lg-6 text-center m-auto contact-column-background">
                 {% for message in app.flashes('success') %}
                     <div class="alert alert-success mt-5">
                         {{ message }}
