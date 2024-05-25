@@ -23,12 +23,24 @@ class PortfolioPhotosRepository extends ServiceEntityRepository
         parent::__construct($registry, PortfolioPhotos::class);
     }
 
-    public function createQueryBuilderForPhotosBySlug(string $slug): QueryBuilder
+    public function createQueryBuilderForPhotosBySlug(string $slug = null): QueryBuilder
     {
-        return $this->createQueryBuilder('p')
-            ->join('p.photoCategory', 'pc')
-            ->where('pc.slug = :slug')
-            ->setParameter('slug', $slug);
+        $queryBuilder = $this->findQueryBuilder();
+
+        if ($slug) {
+            $queryBuilder
+                ->andWhere('pc.slug = :slug')
+                ->setParameter('slug', $slug);
+        }
+
+        return $queryBuilder;
     }
 
+
+    private function findQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    {
+        $queryBuilder = $queryBuilder ?? $this->createQueryBuilder('p');
+
+        return $queryBuilder->join('p.photoCategory', 'pc');
+    }
 }
