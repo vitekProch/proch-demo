@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 
 #[ORM\Entity(repositoryClass: PhotoCategoriesRepository::class)]
 class PhotoCategories
@@ -53,10 +54,9 @@ class PhotoCategories
     public function setCategoryName(string $categoryName): static
     {
         $this->categoryName = $categoryName;
-
+        $this->updateSlug();
         return $this;
     }
-
     public function getCategoryPhotoName(): ?string
     {
         return $this->categoryPhotoName;
@@ -104,7 +104,6 @@ class PhotoCategories
     public function removePortfolioPhoto(PortfolioPhotos $portfolioPhoto): static
     {
         if ($this->portfolioPhotos->removeElement($portfolioPhoto)) {
-            // set the owning side to null (unless already changed)
             if ($portfolioPhoto->getPhotoCategory() === $this) {
                 $portfolioPhoto->setPhotoCategory(null);
             }
@@ -128,10 +127,11 @@ class PhotoCategories
     {
         return $this->slug;
     }
-    public function setSlug($slug): static
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function updateSlug(): void
     {
-        $this->slug = $slug;
-
-        return $this;
+        $slugger = new AsciiSlugger();
+        $this->slug = $slugger->slug((string) $this->categoryName)->lower();
     }
 }
