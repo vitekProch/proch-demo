@@ -29,8 +29,6 @@ class PhotoCategories
     #[ORM\OneToMany(targetEntity: PortfolioPhotos::class, mappedBy: 'photoCategory')]
     private Collection $portfolioPhotos;
 
-    #[ORM\Column(length: 255)]
-    private ?string $fontAwesomeIcon = null;
 
     #[ORM\Column(length: 255, unique: true)]
     private ?string $slug = null;
@@ -112,21 +110,11 @@ class PhotoCategories
         return $this;
     }
 
-    public function getFontAwesomeIcon(): ?string
-    {
-        return $this->fontAwesomeIcon;
-    }
-
-    public function setFontAwesomeIcon(string $fontAwesomeIcon): static
-    {
-        $this->fontAwesomeIcon = $fontAwesomeIcon;
-
-        return $this;
-    }
     public function getSlug(): ?string
     {
         return $this->slug;
     }
+
     #[ORM\PrePersist]
     #[ORM\PreUpdate]
     public function updateSlug(): void

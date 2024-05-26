@@ -45,7 +45,6 @@ class PhotoCategoriesCrudController extends AbstractCrudController
             ->setBasePath('uploads/categories')
             ->setUploadDir('public/uploads/categories')
             ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]');
-        yield TextField::new('fontAwesomeIcon', 'Ikona');
         yield TextField::new('slug', 'Slug')
             ->hideOnForm();
     }

@@ -35,20 +35,23 @@
                     </div>
                 {% else %}
                 <section class="gallery">
-                    <ul class="images"  data-controller="lightbox">
+                    <div class="images"  data-controller="lightbox">
                         {% for portfolio in portfolioPhoto %}
                         <a href="{{ asset(portfolio.getPortfolioPhotoPath ) }}">
-                            <li class="card">
+                            <div class="card">
                                 <img src="{{ asset(portfolio.getPortfolioPhotoPath ) }}" alt="{{ portfolio.getPortfolioAlt }}">
-                            </li>
+                            </div>
                         </a>
                         {% endfor %}
-                    </ul>
+                    </div>
                 </section>
                  {% endif %}
             </div>
         </div>
+        {% if slug %}
         {{ pagerfanta(portfolioPhoto) }}
+        {% endif %}
+
     </div>
 </section>
 {% endblock %}

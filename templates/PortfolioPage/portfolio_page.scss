@@ -1,4 +1,5 @@
 @import '~lightgallery/scss/lightgallery';
+@import '~/assets/styles/helper/variables.scss';
 .portfolio-page{
   .portfolio-nav{
     display: flex;
@@ -84,17 +85,29 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-
 .pagination{
-  display: flex;
   justify-content: center;
-  gap: .5rem;
-}
-.pagination__item{
-  background-color: wheat;
-  padding: 10px 17.56px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
+.page-link{
+  color: black !important;
+  border: none;
+  &:active, &:target,  &:focus{
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.page-item.active > .page-link {
+  background-color: transparent;
+  color: $first_color !important;
+}
+
+.page-item:first-child.disabled, .page-item:last-child.disabled {
+  display: none;
+}
 
 .gallery {
   display: flex;
@@ -126,3 +139,8 @@
   position: relative;
 }
 
+@media only screen and (max-width: 400px) {
+  .page-item:first-child, .page-item:last-child {
+    display: none;
+  }
+}

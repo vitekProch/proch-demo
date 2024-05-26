@@ -14,22 +14,31 @@ use Symfony\Component\HttpFoundation\Request;
 
 class PortfolioPageController extends AbstractController
 {
-    #[Route('/portfolio/{slug}', name: "portfolio_page")]
-    public function portfolio(PhotoCategoriesRepository $photoCategoryRepository,Request $request, PortfolioPhotosRepository $portfolioPhotosRepository, string $slug = null): Response
+    #[Route('/portfolio/{slug}/{page<\d+>}', name: "portfolio_page_photos")]
+    public function portfolioParts(PhotoCategoriesRepository $photoCategoryRepository, PortfolioPhotosRepository $portfolioPhotosRepository, string $slug = null, int $page = 1): Response
     {
-
         $categories = $photoCategoryRepository->findAll();
         $queryBuilder = $portfolioPhotosRepository->createQueryBuilderForPhotosBySlug($slug);
         $adapter = new QueryAdapter($queryBuilder);
         $pagerfanta = Pagerfanta::createForCurrentPageWithMaxPerPage(
             $adapter,
-            $request->query->get('page', 1),
-            9
+            $page,
+            9,
         );
         return $this->render('PortfolioPage/portfolio_page.html.twig', [
             'slug' => $slug,
             'categories' => $categories,
             'portfolioPhoto' => $pagerfanta,
+        ]);
+    }
+
+    #[Route('/portfolio/{slug}', name: "portfolio_page")]
+    public function portfolio(PhotoCategoriesRepository $photoCategoryRepository,Request $request, PortfolioPhotosRepository $portfolioPhotosRepository, string $slug = null): Response
+    {
+        $categories = $photoCategoryRepository->findAll();
+        return $this->render('PortfolioPage/portfolio_page.html.twig', [
+            'slug' => $slug,
+            'categories' => $categories,
         ]);
     }
 }
