@@ -139,6 +139,16 @@
   position: relative;
 }
 
+@media only screen and (max-width: 1199px) {
+  .category_image img {
+    filter: brightness(40%);
+  }
+
+  .category_image .portfolio-overlay {
+    opacity: 1;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .page-item:first-child, .page-item:last-child {
     display: none;
