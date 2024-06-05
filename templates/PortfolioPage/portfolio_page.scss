@@ -132,6 +132,23 @@
   margin-bottom: 14px;
   border-radius: 4px;
 }
+.category-menu-link {
+  color: black;
+  text-decoration: underline #fdd154;
+  font-size: 1.5rem !important;
+  transition: 0.3s linear;
+}
+.category-menu-link:hover {
+  color: $first_color;
+  text-decoration: underline black;
+}
+
+.category-menu {
+  padding-top: 24px;
+  padding-left: 24px;
+  gap: 20px;
+  text-align: end;
+}
 
 .gallery .images img {
   width: 100%;
