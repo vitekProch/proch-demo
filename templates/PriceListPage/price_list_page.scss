@@ -67,7 +67,6 @@ $light-apricot: #fff5ef;;
     height: 30px;
     position: relative;
     border-radius: 50%;
-    //cursor: pointer;
   }
   .price-list-signs .sign-bar{
     position: absolute;
@@ -98,5 +97,11 @@ $light-apricot: #fff5ef;;
       height: 2px;
       background-color: black;
     }
+  }
+  @media screen and (max-width:567px) {
+    .price-article-list{
+      padding: 0 5px;
+    }
+
   }
 }
