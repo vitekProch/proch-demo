@@ -8,17 +8,17 @@
         .col {
             padding: 0;
         }
-        .img-fluide.hero-img-1, .img-fluide.hero-img-2 {
+        .img-fluid.hero-img-1, .img-fluid.hero-img-2 {
             object-fit: cover;
             background-size: cover;
             background-position: center;
             width: 100%;
             height: 100dvh;
         }
-        .img-fluide.hero-img-1{
+        .img-fluid.hero-img-1{
             background-image: url("../../public/images/homepageImages/uvodni_foto_mensi.jpg");
         }
-        .img-fluide.hero-img-2{
+        .img-fluid.hero-img-2{
             background-image: url("../../public/images/homepageImages/uvodni_foto_vetsi.jpeg");
         }
     }
@@ -160,8 +160,8 @@
 }
 
 @media only screen and (max-width: 1006px) {
-    .img-fluide.hero-img-1, .img-fluide.hero-img-2 {
-        height: 50vw !important;
+    .img-fluid.hero-img-1, .img-fluid.hero-img-2 {
+        height: 85vw !important;
     }
     .opening-text-container{
         font-size: 1rem;
