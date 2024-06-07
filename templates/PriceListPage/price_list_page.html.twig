@@ -6,7 +6,7 @@
         <h1>{{ title }}</h1>
         <div class="container price-article-list">
             {% for weddingPackage in weddingPackages %}
-                <div class="row justify-content-center">
+                <div class="row justify-content-center price-article-item">
                     <div data-controller="priceDropdown" data-value="{{weddingPackage.id}}" class="row price-dropdown-header align-items-center">
                         <div class="col pt-2"><h2>{{ weddingPackage.name }}</h2></div>
                         <div class="col">
@@ -37,7 +37,7 @@
                 </div>
             {% endfor %}
             {% for priceList in smallPriceList %}
-                <div class="row justify-content-center">
+                <div class="row justify-content-center price-article-item">
                     <div data-controller="priceDropdown" data-value="{{priceList.id}}" class="row price-dropdown-header pt-1 align-items-center">
                         <div class="col pt-2"><h2>{{ priceList.PhotoPackageTitle }}</h2></div>
                         <div class="col">
