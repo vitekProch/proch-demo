@@ -1,57 +1,82 @@
 {% extends 'base.html.twig' %}
 {% block title %} Portfólio | {{ parent() }}{% endblock %}
 {% block body %}
-<section class="portfolio-page">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-auto bg-light sticky-top d-none d-xl-block">
-                <aside class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
-                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 category-menu">
-                        {% for category in categories %}
-                            <li class="nav-item">
-                                <a class="category-menu-link" href="{{ path('portfolio_page', { slug: category.getSlug}) }}">
-                                    <span class="">{{ category.getCategoryName }}</span>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </aside>
-            </div>
-            <div class="col-sm p-3 min-vh-100">
-                {% if not slug %}
-                    <div class="container">
-                        <div class="row">
+    <section class="portfolio-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-auto bg-light sticky-top d-none d-xl-block">
+                    <aside class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 category-menu">
                             {% for category in categories %}
-                                <div class="col-md-6 col-xl-4 p-1">
-                                    <a href="{{ slug ? '#' : path('portfolio_page', { slug: category.getSlug}) }} " class="thumbnail">
-                                        <div class="category_image">
-                                            <img class="img img-responsive full-width" src="{{ asset(category.getCategoryPhotoPath ) }}" alt="{{ category.getCategoryName }}" />
-                                            <div class="portfolio-overlay">{{ category.getCategoryName }}</div>
+                                <li class="nav-item">
+                                    <a class="category-menu-link"
+                                       href="{{ path('portfolio_page', { slug: category.getSlug}) }}">
+                                        <span class="">{{ category.getCategoryName }}</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </aside>
+                </div>
+                <div class="col-sm p-3 min-vh-100">
+                    {% if not slug %}
+                        <div class="container">
+                            <div class="row">
+                                {% for category in categories %}
+                                    <div class="col-md-6 col-xl-4 p-1">
+                                        <a href="{{ slug ? '#' : path('portfolio_page', { slug: category.getSlug}) }}"
+                                           class="thumbnail">
+                                            <div class="category_image">
+                                                <img class="img img-responsive full-width loading"
+                                                     data-controller="lazy-load"
+                                                     data-src="{{ asset(category.getCategoryPhotoPath) }}"
+                                                     alt="{{ category.getCategoryName }}"/>
+                                                <div class="portfolio-overlay">{{ category.getCategoryName }}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                                {% for category in categories %}
+                                    <div class="col-md-6 col-xl-4 p-1">
+                                        <a href="{{ slug ? '#' : path('portfolio_page', { slug: category.getSlug}) }}"
+                                           class="thumbnail">
+                                            <div class="category_image" data-controller="lazy-load">
+
+                                                <span class="loader"></span>
+                                                <img class="img img-responsive full-width"
+                                                     data-src="{{ asset(category.getCategoryPhotoPath) }}"
+                                                     alt="{{ category.getCategoryName }}">
+                                                <div class="portfolio-overlay">{{ category.getCategoryName }}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    {% else %}
+                        <section class="gallery">
+                            <div class="images" data-controller="lightbox">
+                                {% for portfolio in portfolioPhoto %}
+                                    <a href="{{ asset(portfolio.getPortfolioPhotoPath) }}">
+                                        <div class="card" data-controller="lazy-load">
+                                            <span class="loader"></span>
+                                            <img
+                                                    alt="{{ portfolio.getPortfolioAlt }}"
+                                                    data-src="{{ asset(portfolio.getPortfolioPhotoPath) }}">
                                         </div>
                                     </a>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                {% else %}
-                <section class="gallery">
-                    <div class="images"  data-controller="lightbox">
-                        {% for portfolio in portfolioPhoto %}
-                        <a href="{{ asset(portfolio.getPortfolioPhotoPath ) }}">
-                            <div class="card">
-                                <img src="{{ asset(portfolio.getPortfolioPhotoPath ) }}" alt="{{ portfolio.getPortfolioAlt }}">
-                            </div>
-                        </a>
-                        {% endfor %}
-                    </div>
-                </section>
-                 {% endif %}
-            </div>
-        </div>
-        {% if slug %}
-        {{ pagerfanta(portfolioPhoto) }}
-        {% endif %}
+                                {% endfor %}
 
-    </div>
-</section>
+                            </div>
+                        </section>
+                    {% endif %}
+                </div>
+            </div>
+            {% if slug %}
+                {{ pagerfanta(portfolioPhoto) }}
+            {% endif %}
+
+        </div>
+    </section>
 {% endblock %}

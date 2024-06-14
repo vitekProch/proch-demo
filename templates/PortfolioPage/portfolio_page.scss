@@ -44,6 +44,44 @@
   .sticky-top {
     top: 81px;
   }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .card {
+    position: relative;
+  }
+
+  img {
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 100%; /* Ensure images take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  img.loaded {
+    opacity: 1;
+  }
+
 }
 
 .portfolio-gallery-container {
