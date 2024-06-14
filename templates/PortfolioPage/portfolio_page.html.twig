@@ -24,24 +24,9 @@
                             <div class="row">
                                 {% for category in categories %}
                                     <div class="col-md-6 col-xl-4 p-1">
-                                        <a href="{{ slug ? '#' : path('portfolio_page', { slug: category.getSlug}) }}"
-                                           class="thumbnail">
-                                            <div class="category_image">
-                                                <img class="img img-responsive full-width loading"
-                                                     data-controller="lazy-load"
-                                                     data-src="{{ asset(category.getCategoryPhotoPath) }}"
-                                                     alt="{{ category.getCategoryName }}"/>
-                                                <div class="portfolio-overlay">{{ category.getCategoryName }}</div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                {% endfor %}
-                                {% for category in categories %}
-                                    <div class="col-md-6 col-xl-4 p-1">
-                                        <a href="{{ slug ? '#' : path('portfolio_page', { slug: category.getSlug}) }}"
+                                        <a href="{{ slug ? '#' : path('portfolio_page', { slug: category.getSlug }) }}"
                                            class="thumbnail">
                                             <div class="category_image" data-controller="lazy-load">
-
                                                 <span class="loader"></span>
                                                 <img class="img img-responsive full-width"
                                                      data-src="{{ asset(category.getCategoryPhotoPath) }}"
@@ -51,7 +36,6 @@
                                         </a>
                                     </div>
                                 {% endfor %}
-
                             </div>
                         </div>
                     {% else %}
