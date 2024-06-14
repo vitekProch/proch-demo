@@ -2,12 +2,15 @@
     {% use "Components/slider.html.twig" %}
     {% block slideContent %}
         <div class="swiper-wrapper">
-                {% for category in categories %}
+            {% for category in categories %}
                 <div class="swiper-slide">
-                        <img src="{{ asset(category.categoryPhotoPath ) }}" alt="{{ category.categoryName }}">
-                        <a class="tests" href="{{ path('portfolio_page') }}/{{category.slug}}">{{ category.categoryName }}</a>
+                    <img src="{{ asset(category.categoryPhotoPath ) }}" alt="{{ category.categoryName }}">
+                    <a class="tests"
+                       href="{{ path('portfolio_page') }}/{{ category.slug }}">{{ category.categoryName }}</a>
                 </div>
-                {% endfor %}
+            {% endfor %}
         </div>
     {% endblock %}
+    {% block slideNavigation %} {{ parent() }} {% endblock %}
+
 </div>

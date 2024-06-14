@@ -7,7 +7,7 @@ export default class extends Controller {
     }
     
     reviewSlider(){
-        const reviewSlider = new Swiper('.review-slider', {
+        const reviewSlider = new Swiper('.portfolio-slider', {
             lazy: true,
             direction: 'horizontal',
             slidesPerView: 1,
@@ -28,7 +28,7 @@ export default class extends Controller {
           
         });
     }
-    
+
     portfolioSlider(){
         const portfolioSlider = new Swiper('.categories-slider', {
             lazy: true,
