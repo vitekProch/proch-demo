@@ -4,7 +4,7 @@
         <div class="swiper-wrapper">
             {% for category in categories %}
                 <div class="swiper-slide">
-                    <img src="{{ asset(category.categoryPhotoPath ) }}" alt="{{ category.categoryName }}">
+                    <img class="swiper-lazy" src="{{ asset(category.categoryPhotoPath ) }}" alt="{{ category.categoryName }}">
                     <a class="tests"
                        href="{{ path('portfolio_page') }}/{{ category.slug }}">{{ category.categoryName }}</a>
                 </div>
