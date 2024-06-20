@@ -73,23 +73,19 @@
     min-width: 100%;
 }
 
+.review-image{
+    padding: 0 40px;
+}
+
 .reaction-swiper-box{
     max-width: 750px;
 }
 
 .swiper-button-next, .swiper-button-prev{
-    position: absolute;
     color: black;
     &:hover{
         color: $first_color;
     }
-}
-
-.swiper-button-prev{
-    left: 0;
-}
-.swiper-button-next{
-    right: 0;
 }
 
 

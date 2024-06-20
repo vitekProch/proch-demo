@@ -4,7 +4,7 @@
         <div class="swiper-wrapper">
             {% for reviews in peopleReviews %}
                 <div class="swiper-slide">
-                    <img class="swiper-lazy" src="{{ asset(reviews.getReviewPhotoPath ) }}" alt="{{ reviews.getReviewPhotoName }}">
+                    <img class="swiper-lazy review-image" src="{{ asset(reviews.getReviewPhotoPath ) }}" alt="{{ reviews.getReviewPhotoName }}">
                 </div>
             {% endfor %}
         </div>
