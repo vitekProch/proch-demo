@@ -26,7 +26,7 @@
 <header>
   <nav {% if active_route == 'homepage' %}data-controller="scrollHeader"{% endif %} data-scrollHeader-target="" class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand mx-2" href="{{ path('homepage') }}" id="brand">
+      <a class="navbar-brand mx-2" href="{{ path('homepage') }}">
         <span id="brand">FOTOGRAFIE OD HANKY</span>
       </a>
       <button data-scrollHeader-target="hamburger" type="button" class="hamburger navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarNav" data-action="scrollHeader#toggleBackground" aria-expanded="false">
