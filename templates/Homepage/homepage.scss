@@ -24,6 +24,12 @@
     }
 
 }
+.one-image{
+    display: none;
+}
+.hero-img-3 {
+    width: 100%;
+}
 
 // ---------- OPENING TEXT SECTION --------- //
 .opening-text-section{
@@ -164,9 +170,12 @@
     }
 }
 
-@media only screen and (max-width: 1006px) {
-    .img-fluid.hero-img-1, .img-fluid.hero-img-2 {
-        height: 85vw !important;
+@media only screen and (max-width: 1300px) {
+    .two-images{
+        display: none;
+    }
+    .one-image{
+        display: block;
     }
     .opening-text-container{
         font-size: 1rem;
