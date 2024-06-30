@@ -7,7 +7,7 @@ header {
         color: rgba(0, 0, 0, 0.55);
         margin-right: 10px;
         position: relative;
-        font-size: 23px;
+        font-size: 22px;
         transition: 0.1s ease;
     }
     #navbarNav{
@@ -108,7 +108,7 @@ header {
             font-size: 18px;
         }
     }
-    @media only screen and (max-width: 992px){
+    @media only screen and (max-width: 991px){
         .navbar-nav{
             gap: 20px;
             margin-top: 1rem;
@@ -121,6 +121,7 @@ header {
             margin: 0 auto;
             border: none;
             padding: 0;
+            background-color: transparent;
         }
         .dropdown-item.nav-link{
             margin: 0;
